@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMK Gereja Katedral Kristus Raja Tanjungkarang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Fraunces', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+    
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+    }
+    .slider-container::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        opacity: 0.7;
+        background-color: #423006;
+    }
+    .slider {
+      display: flex;
+      width: 300%;
+      animation: slide 24s infinite;
+    }
+    .slide {
+      width: 100vw;
+      flex-shrink: 0;
+    }
+    .slide img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      10% { transform: translateX(0); }
+      20% { transform: translateX(-34%); }
+      30% { transform: translateX(-34%); }
+      40% { transform: translateX(-67.5%); }
+      50% { transform: translateX(-67.5%); }
+      60% { transform: translateX(-34%); }
+      70% { transform: translateX(-34%); }
+      80% { transform: translateX(0); }
+      100% { transform: translateX(0); }
+    }
+
+    .slider-text {
+      position: absolute;
+      z-index: 10;
+      width: 75vw; 
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+    .slider-text h1 {
+      font-size: 4.3em;
+      margin: 0;
+    }
+    .slider-text p {
+      width: 70%;
+      font-size: 1.2em;
+    }
+
+    nav {
+  background-color: #6b490a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  padding: 20px 0;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.5s;
+}
+
+.nav-links a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd166;
+  background-color: #423006;
+}
+
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start; /* penting! supaya teks ke kiri */
+    background-color: #6b490a;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+    width: 100%;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* cukup tinggi agar semua link terlihat */
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-logo {
+    padding: 5px;
+  }
+
+  .nav-toggle {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+  }
+}
+
+    section {
+      padding: 40px 100px;
+      margin: auto;
+    }
+    section h2 {
+      color: #6b490a;
+      font-size: 3.4em;
+    }
+    section p {
+        margin-top: -30px;
+    }
+    ul {
+      padding-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section ul li {
+      color: #f9f9f9;
+      height: 350px;
+      width: 15vw;
+      border-radius: 20px;
+      margin: 0 15px;
+      margin-top: -10px;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.9em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #000000;
+    
+    }
+
+    .wave img {
+      width: 100%;
+      position: relative;
+      z-index: 10;
+      margin-top: -250px;
+    }
+
+    #tentang {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    #tentang .sectiontext {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    #kegiatan {
+      height: 90vh;
+      padding: 20px 100px;
+      display: flex;
+      flex-direction: column;
+      align-items:center ;
+      background-color: #6b490a;
+    }
+
+    #kegiatan h2 {
+      width: 100%;
+      color: #f9f9f9;
+      text-align: center;
+      z-index: 100;
+    }
+
+    #kegiatan ul li span {
+      z-index: 10;
+      width: 90%;
+    }
+
+    #kegiatan ul li a {
+      z-index: 10;
+      color: #fff;
+      padding: 5px 10px;
+      border: inset 1px #fff;
+      margin-top: 10px;
+      font-weight: 300;
+      font-size: 11pt;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: ease 0.2s;
+    }
+
+    #kegiatan ul li a:hover {
+      color: #6b490a;
+      background-color: #f9f9f9;
+    }
+
+
+    #kegiatan ul li:nth-child(1)::after{
+      content: "";
+      position: absolute;
+      z-index: -100;
+      width: 230px; 
+      border-radius: 20px;
+      height: 350px;
+      background-image: url(kegiatan1.png);
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5; /* transparansi khusus untuk background */
+      z-index: 1;
+      transition: 0.2s;
+    }
+    #kegiatan ul li:nth-child(2)::after{
+      content: "";
+      position: absolute;
+      z-index: -100;
+      width: 230px; 
+      border-radius: 20px;
+      height: 350px;
+      background-image: url(kegiatan2.png);
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5; /* transparansi khusus untuk background */
+      z-index: 1;
+      transition: 0.2s;
+    }
+    #kegiatan ul li:nth-child(3)::after{
+      content: "";
+      position: absolute;
+      z-index: -100;
+      width: 230px; 
+      border-radius: 20px;
+      height: 350px;
+      background-image: url(kegiatan3.jpg);
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5; /* transparansi khusus untuk background */
+      transition: 0.2s;
+      z-index: 1;
+    }
+    #kegiatan ul li:nth-child(4)::after{
+      content: "";
+      position: absolute;
+      z-index: -100;
+      width: 230px; 
+      border-radius: 20px;
+      height: 350px;
+      background-image: url(kegiatan4.jpg);
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5; /* transparansi khusus untuk background */
+      transition: 0.2s;
+      z-index: 1;
+    }
+    #kegiatan ul li:nth-child(5)::after{
+      content: "";
+      position: absolute;
+      z-index: -100;
+      width: 230px; 
+      border-radius: 20px;
+      height: 350px;
+      background-image: url(kegiatan5.jpg);
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5; /* transparansi khusus untuk background */
+      transition: 0.2s;
+      z-index: 1;
+    }
+
+    #kegiatan ul li:hover {
+      opacity: 0.8;
+      border: inset 1px #fff;
+    }
+    .ctabtn {
+      width: fit-content;
+      color: #f9f9f9;
+      padding: 10px 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      background: none;
+      border: inset 2px #f9f9f9;
+      transition: 0.2s;
+    }
+
+    .ctabtn a {
+      color: #f9f9f9;
+      font-family: 'Fraunces', sans-serif;
+      font-weight: 200;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .ctabtn:hover {
+      background-color: #fff;
+      color: #423006;
+    }
+
+    .ctabtn:hover a {
+      color: #423006;
+      font-weight: 300;
+    }
+
+    #pengurus {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #pengurus .teamcontainer {
+      width: 100%;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .teamcontainer .memberbox {
+      height: 300px;
+      width: 15vw;
+      border-radius: 30px;
+      margin: 0 20px;
+      background-image: url(bgteam.png);
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .memberbox img {
+      border-radius: 30px;
+      position: absolute;
+      z-index: 0;
+      height: 350px;
+      margin-top: -50px;
+      transition: 0.3s;
+    }
+
+    .memberbox img:hover {
+      height: 380px;
+    }
+
+    .memberbox .membername {
+      padding: 10px;
+      z-index: 1;
+      height: 30%;
+      width: 90%;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      color: #423006;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .membername h3 {
+      font-size: 14pt;
+      margin-top: -1px;
+    }
+
+    .membername p {
+      height: 10px;
+      margin-top: -15px;
+    }
+
+    #gabung {
+      height: 25vh;
+      width: 100%;
+      background-color: #6b490a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #f9f9f9;
+    }
+
+    #gabung h2 {
+      margin-top: -10px;
+      color: #f9f9f9;
+    }
+    
+    #kontak {
+      padding: 10px 40px;
+      color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #6b490a;
+    }
+
+    #kontak p {
+      margin: -10px 20px 0 20px;
+    }
+
+    #kontak p a  {
+      color: #f9f9f9;
+    }
+
+    footer {
+      background-color: #6b490a;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    a {
+      color: #6b490a;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      nav a {
+        margin: 8px;
+      }
+    }
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+  .slider-text h1 {
+    font-size: 2em;
+  }
+
+  .slider-text p {
+    font-size: 1em;
+    width: 90%;
+  }
+
+  @keyframes slide {
+      0% { transform: translateX(0); }
+      10% { transform: translateX(0); }
+      20% { transform: translateX(-33.4%); }
+      30% { transform: translateX(-33.4%); }
+      40% { transform: translateX(-66.6%); }
+      50% { transform: translateX(-66.6%); }
+      60% { transform: translateX(-33.4%); }
+      70% { transform: translateX(-33.4%); }
+      80% { transform: translateX(0); }
+      100% { transform: translateX(0); }
+    }
+
+  section {
+    padding: 20px;
+  }
+  
+  .wave img {
+    height: 30vh;
+    margin-top: -100px;
+  }
+
+  #tentang {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    text-align: center;
+  }
+
+  .sectiontext {
+    padding: 10px;
+    margin-top: -30px;
+    text-align: center;
+  }
+
+  .sectionimg {
+    width: 100%;
+    height: auto;
+  }
+
+  #kegiatan {
+    height: 95vh;
+    padding: 20px;
+  }
+
+
+
+ #kegiatan ul li:nth-child(1)::after,  #kegiatan ul li:nth-child(2)::after,  #kegiatan ul li:nth-child(3)::after,  #kegiatan ul li:nth-child(4)::after,  #kegiatan ul li:nth-child(5)::after {
+  width: 250px;
+ }
+
+  #kegiatan ul {
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+  #kegiatan ul li {
+  flex: 0 0 auto;            /* Prevent li from shrinking */
+  width: 250px;              /* Lebar tetap tiap item */
+  height: 350px;
+  font-size: 1.2em;
+  scroll-snap-align: start;
+  border-radius: 20px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+  #kegiatan ul li::after {
+    width: 250px;
+    height: 350px;
+    border-radius: 20px;
+  }
+
+  .scrollwrapper {
+    height: 400px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: -30px;
+  }
+
+  #pengurus {
+    height: fit-content;
+    padding-bottom: 10vh;
+  }
+
+  #pengurus h2 {
+    text-align: center;
+  }
+
+  #pengurus .teamcontainer {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .teamcontainer .memberbox {
+    width: 80%;
+    height: 320px;
+    margin-top: 50px;
+  }
+
+  .memberbox img {
+    height: 90%;
+    position: relative;
+    margin-top: 0;
+  }
+
+  .memberbox img:hover {
+    height: 100%;
+    margin-top: 0;
+  }
+
+  #gabung {
+    padding: 40px 20px 20px 20px;
+    height: fit-content;
+    text-align: center;
+  }
+
+#gabung h2 {
+  font-size: 2.7em;
+}
+
+#gabung p {
+  margin-top: 2px;
+}
+
+  #kontak {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #kontak p {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  footer p {
+    font-size: 0.8em;
+  }
+}
+  </style>
+</head>
+<body>
+ <nav>
+  <div class="nav-logo"><img src="logo.png" height="50px" alt=""></div>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kegiatan">Kegiatan</a>
+    <a href="#pengurus">Pengurus</a>
+    <a href="#gabung">Gabung</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+</nav>
+
+  <!-- HEADER SLIDER -->
+  <div class="slider-container" id="beranda">
+    <div class="slider">
+      <div class="slide"><img src="img (1).JPG" height="70vh" alt="Kegiatan 1 OMK" /></div>
+      <div class="slide"><img src="img (2).jpg" height="70vh" alt="Kegiatan 2 OMK" /></div>
+      <div class="slide"><img src="img (3).jpg" height="70vh" alt="Kegiatan 3 OMK" /></div>
+    </div>
+    <div class="slider-text">
+      <h1>OMK Gereja Katedral Kristus Raja Tanjungkarang</h1>
+      <p>OMK Katedral Kristus Raja Tanjungkarang adalah komunitas anak muda yang aktif, kreatif, dan bersatu dalam iman Katolik. Yuk, bertumbuh bersama!</p>
+    </div>
+  </div>
+
+  <div class="wave">
+    <img src="wave.png" alt="wave">
+  </div>
+  
+
+  <section id="tentang">
+    <img src="tentang.png" height="100%" alt="tentang" class="sectionimg">
+    <div class="sectiontext">
+      <h2>Tentang Kami</h2>
+      <p>OMK Gereja Katedral Kristus Raja Tanjungkarang hadir untuk mewadahi semangat dan potensi anak muda dalam pelayanan, pengembangan diri, dan kegiatan sosial rohani.</p>
+    </div>
+  </section>
+
+  <section id="kegiatan">
+    <h2>Kegiatan</h2>
+    <div class="scrollwrapper">
+      <ul>
+        <li><span>Rosario Bersama</span><a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDQ0MDA2NTUxNzQ0MDAz?story_media_id=3356571142914517090_6392788565&igsh=dGphd3hmOXk1Z29i">Lihat Lebih Banyak!</a></li>
+        <li><span>Latihan koor OMK</span><a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDAzMjA1NDExOTgzNjE5?story_media_id=3161968942482832156_6392788565&igsh=NXMwaHp0bWlhNHBh">Lihat Lebih Banyak!</a></li>
+        <li><span>Natal Bersama</span><a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDAwNzk1MDAyMjk5Nzg1?story_media_id=3262802925563020164_6392788565&igsh=MXU2aHZ1bmRmcG11ag==">Lihat Lebih Banyak!</a></li>
+        <li><span>Rekoleksi tahunan</span><a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDAwNzk1MDAyMjk5Nzg1?story_media_id=3262802925563020164_6392788565&igsh=MXU2aHZ1bmRmcG11ag==">Lihat Lebih Banyak!</a></li>
+        <li><span>Teater OMK</span><a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODc4MzI4MTE1MTk4OTAw?story_media_id=3512069093954580586_6392788565&igsh=NzFzbzV6ZjRyMGRz">Lihat Lebih Banyak!</a></li>
+      </ul>
+    </div>
+    <button class="ctabtn"><a href="https://www.instagram.com/omkkatedraltanjungkarang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Lihat Lebih Banyak di Instagram!!</a></button>
+  </section>
+
+  <section id="pengurus">
+    <h2>Pengurus Inti</h2>
+    <div class="teamcontainer">
+      <div class="memberbox">
+        <img src="richard.png" alt="">
+        <div class="membername">
+          <h3>Richard Alwie</h3>
+          <p>Ketua OMK</p>
+        </div>
+      </div>
+      <div class="memberbox">
+        <img src="agung.png" alt="">
+        <div class="membername">
+          <h3>Stefanus Agung Sukmajati</h3>
+          <p>Wakil Ketua OMK</p>
+        </div>
+      </div>
+      <div class="memberbox">
+        <img src="richard.png" alt="">
+        <div class="membername">
+          <h3>Juventia</h3>
+          <p>Sekretaris OMK</p>
+        </div>
+      </div>
+      <div class="memberbox">
+        <img src="ANGEL.png" alt="">
+        <div class="membername">
+          <h3>Angeline Tania</h3>
+          <p>Bendahara OMK</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gabung">
+    <h2>Mari Gabung Bersama Kami!!!</h2>
+    <p>Ingin jadi bagian dari kami? Hadiri pertemuan mingguan atau hubungi kami lewat Instagram atau email di bawah.</p>
+  </section>
+
+  <section id="kontak">
+      <p>Email: <a href="mailto:omkkatedraltjk@gmail.com">omkkatedraltjk@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/omkkatedraltanjungkarang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@omkkatedraltanjungkarang</a></p>
+
+    </section>
+
+  <footer>
+    <p>&copy; 2025 OMK Gereja Katedral Kristus Raja Tanjungkarang</p>
+  </footer>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('navLinks');
+
+  function toggleMenu() {
+    navLinks.classList.toggle('active');
+  }
+
+  document.addEventListener('click', function(e) {
+    const isClickInside = navLinks.contains(e.target) || navToggle.contains(e.target);
+    if (!isClickInside && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+</script>
+</body>
+</html>
